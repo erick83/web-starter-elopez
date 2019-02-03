@@ -1,11 +1,12 @@
 import React from 'react';
-import { Grid, Typography, Card, CardContent, CardMedia } from '@material-ui/core';
+import { Link as RouterLink } from 'react-router-dom';
+import { Grid, Typography, Card, CardContent, CardMedia, Link } from '@material-ui/core';
 import { LocationOn, StarRate, DirectionsWalk } from '@material-ui/icons';
 import { withStyles } from '@material-ui/core/styles';
 import styles from './styles';
 import { closeTimeParser } from '../../utils/utils';
 
-function ItemCard({ classes, title, cuisine, references, hours, distance, rating, images }) {
+function ItemCard({ classes, id, title, cuisine, references, hours, distance, rating, images }) {
   const image = images && images.length && [...images].shift();
   const close = closeTimeParser(hours);
 
@@ -15,10 +16,9 @@ function ItemCard({ classes, title, cuisine, references, hours, distance, rating
         <CardContent
           className={classes.content}
         >
-          <Typography component="h3" color="primary" className={classes.title}>
-            <LocationOn className={classes.icon} />
-            {title}
-          </Typography>
+          <Link component={RouterLink} to={`/rest/${id}`} color="primary" className={classes.title}>
+            <LocationOn className={classes.icon} /> {title}
+          </Link>
           <Typography component="h4" color="secondary" className={classes.cuisine}>
             {cuisine} Style Food
           </Typography>
