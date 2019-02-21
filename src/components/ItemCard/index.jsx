@@ -24,7 +24,7 @@ function ItemCard({ classes, id, title, cuisine, references, hours, distance, ra
           </Typography>
           <Typography color="primary">
             <StarRate className={classes.icon} />
-            {`Featured in ${[...references].shift().site_name}`}
+            {`Featured in ${references[0] && references[0].site_name}`}
             <span> + {references.length}</span>
           </Typography>
         </CardContent>
