@@ -1,15 +1,20 @@
 import React from 'react';
 import { Map as LeafMap, Marker, Popup, TileLayer } from 'react-leaflet';
+import { getCenter } from 'geolib';
 import { withStyles } from '@material-ui/core/styles';
 
-import geoCenter from '../../utils/geoCenter';
 import styles from './styles';
 
-function Map({ items, center, classes }) {
+function parseCenter(arr) {
+  const result = getCenter(arr.map(({ lat, lon }) => ({ latitude: lat, longitude: lon })));
+  return [result.latitude, result.longitude];
+}
+
+function Map({ items, classes }) {
   return (
     <div className={classes.wrapper}>
       <LeafMap
-        center={geoCenter(items)}
+        center={parseCenter(items)}
         zoom={13}
         className={classes.leaflet}
       >

@@ -32,7 +32,6 @@ class SearchPage extends Component {
             && data.search_restaurants.results
             && data.search_restaurants.results.length > 0
           ) {
-            console.log(data.search_restaurants.results);
             return (
               <Grid container>
                 <Grid item md={4} sm={12}>
@@ -41,10 +40,7 @@ class SearchPage extends Component {
                   })}
                 </Grid>
                 <Grid item md={8} sm={false}>
-                  <Map
-                    center={data.search_restaurants.results[0]}
-                    items={data.search_restaurants.results}
-                  />
+                  <Map items={data.search_restaurants.results} />
                 </Grid>
               </Grid>
             );
