@@ -32,6 +32,7 @@ class SearchPage extends Component {
             && data.search_restaurants.results
             && data.search_restaurants.results.length > 0
           ) {
+            console.log(data.search_restaurants.results);
             return (
               <Grid container>
                 <Grid item md={4} sm={12}>

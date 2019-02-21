@@ -6,7 +6,11 @@ import moment from 'moment';
 import './index.css';
 import { BrowserRouter } from 'react-router-dom';
 import { MuiThemeProvider } from '@material-ui/core/styles';
+import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import IconRetinaUrl from 'leaflet/dist/images/marker-icon-2x.png';
+import IconUrl from 'leaflet/dist/images/marker-icon.png';
+import ShadowUrl from 'leaflet/dist/images/marker-shadow.png';
 
 import { ApolloProvider } from 'react-apollo';
 import { client } from './utils/apollo';
@@ -20,6 +24,14 @@ import 'typeface-roboto';
 // import { setContext } from 'apollo-link-context';
 // import Cookies from 'universal-cookie';
 
+// --------- Fix CDN icon import Error
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: IconRetinaUrl,
+  iconUrl: IconUrl,
+  shadowUrl: ShadowUrl
+});
+// ---------
 
 // Configure moment to use shorthand relative time
 moment.updateLocale('en', {

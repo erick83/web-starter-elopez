@@ -851,7 +851,7 @@
   dependencies:
     regenerator-runtime "^0.12.0"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.2.0", "@babel/runtime@^7.3.1":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.2.0":
   version "7.3.1"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.3.1.tgz#574b03e8e8a9898eaf4a872a92ea20b7846f6f2a"
   integrity sha512-7jGW8ppV0ant637pIqAcFfQDDH1orEPGJb8aXfUozuCU3QqX7rX4DA8iwrbPrR1hcH0FTTHz47yQnk+bl5xHQA==
@@ -4908,7 +4908,7 @@ hoist-non-react-statics@^2.3.1, hoist-non-react-statics@^2.5.0, hoist-non-react-
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.5.5.tgz#c5903cf409c0dfd908f388e619d86b9c1174cb47"
   integrity sha512-rqcy4pJo55FTTLWt+bU8ukscqHeE/e9KWvsOW2b/a3afxQZhwkQdT1rPPCJ0rYXdj4vNcasY8zHTH+jF/qStxw==
 
-hoist-non-react-statics@^3.0.0, hoist-non-react-statics@^3.2.1, hoist-non-react-statics@^3.3.0:
+hoist-non-react-statics@^3.0.0, hoist-non-react-statics@^3.2.1:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.0.tgz#b09178f0122184fb95acf525daaecb4d8f45958b"
   integrity sha512-0XsbTXxgiaCDYDIWFcwkmerZPSwywfUqYmwT4jzewKTQSWoE6FCMoUVOeBJWK3E/CrWbxRG3m5GzY4lnIwGRBA==
@@ -6433,7 +6433,7 @@ lcid@^2.0.0:
   dependencies:
     invert-kv "^2.0.0"
 
-leaflet@^1.4.0:
+leaflet@1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/leaflet/-/leaflet-1.4.0.tgz#d5f56eeb2aa32787c24011e8be4c77e362ae171b"
   integrity sha512-x9j9tGY1+PDLN9pcWTx9/y6C5nezoTMB8BLK5jTakx+H7bPlnbCHfi9Hjg+Qt36sgDz/cb9lrSpNQXmk45Tvhw==
@@ -8737,15 +8737,15 @@ react-is@^16.8.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.2.tgz#09891d324cad1cb0c1f2d91f70a71a4bee34df0f"
   integrity sha512-D+NxhSR2HUCjYky1q1DwpNUD44cDpUXzSmmFyC3ug1bClcU/iDNy0YNn1iwme28fn+NFhpA13IndOd42CrFb+Q==
 
-react-leaflet@^2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/react-leaflet/-/react-leaflet-2.2.1.tgz#c33974f518ffc8b3b7221f72e00c28963b95314d"
-  integrity sha512-q95486MsoKYmHFRDJyKRY/wdlKbaiTBfq23rfcG9WwsGNxaQuHLcIhxj3m9s4PiG3DImhz3Qfov6UUrsf+yMpw==
+react-leaflet@2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/react-leaflet/-/react-leaflet-2.2.0.tgz#9372dc74790515cef723a173833009b7709cbec6"
+  integrity sha512-TCjqIp9ET2LMOK+rBjJTQQesk/9UrP6+zsXoSJU8ZzuyJWVQERLGadDng4yZ63XgIcB7aEAXnl93IsmF46uDyQ==
   dependencies:
-    "@babel/runtime" "^7.3.1"
+    "@babel/runtime" "^7.2.0"
     fast-deep-equal "^2.0.1"
-    hoist-non-react-statics "^3.3.0"
-    warning "^4.0.3"
+    hoist-non-react-statics "^3.2.1"
+    warning "^4.0.0"
 
 react-lifecycles-compat@^3.0.2, react-lifecycles-compat@^3.0.4:
   version "3.0.4"
@@ -10522,17 +10522,17 @@ warning@^3.0.0:
   dependencies:
     loose-envify "^1.0.0"
 
+warning@^4.0.0:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/warning/-/warning-4.0.3.tgz#16e9e077eb8a86d6af7d64aa1e05fd85b4678ca3"
+  integrity sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==
+  dependencies:
+    loose-envify "^1.0.0"
+
 warning@^4.0.1:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/warning/-/warning-4.0.2.tgz#aa6876480872116fa3e11d434b0d0d8d91e44607"
   integrity sha512-wbTp09q/9C+jJn4KKJfJfoS6VleK/Dti0yqWSm6KMvJ4MRCXFQNapHuJXutJIrWV0Cf4AhTdeIe4qdKHR1+Hug==
-  dependencies:
-    loose-envify "^1.0.0"
-
-warning@^4.0.3:
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/warning/-/warning-4.0.3.tgz#16e9e077eb8a86d6af7d64aa1e05fd85b4678ca3"
-  integrity sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==
   dependencies:
     loose-envify "^1.0.0"
 

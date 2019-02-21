@@ -1,6 +1,6 @@
 export default ({ palette, spacing }) => ({
   wrapper: {
-    height: 'calc(100vh - 10px)',
+    height: 'calc(100vh - 20px)',
     width: 'calc(64vw - 10px)',
     position: 'fixed',
     padding: '10px',
