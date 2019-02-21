@@ -6,6 +6,7 @@ import moment from 'moment';
 import './index.css';
 import { BrowserRouter } from 'react-router-dom';
 import { MuiThemeProvider } from '@material-ui/core/styles';
+import 'leaflet/dist/leaflet.css';
 
 import { ApolloProvider } from 'react-apollo';
 import { client } from './utils/apollo';

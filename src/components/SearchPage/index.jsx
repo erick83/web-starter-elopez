@@ -4,6 +4,7 @@ import { Grid } from '@material-ui/core';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 import ItemCard from '../ItemCard';
+import Map from '../Map';
 import { RESTAURANT_SEARCH_QUERY } from '../../graphql/queries';
 
 class SearchPage extends Component {
@@ -39,7 +40,10 @@ class SearchPage extends Component {
                   })}
                 </Grid>
                 <Grid item md={8} sm={false}>
-                  Map Space
+                  <Map
+                    center={data.search_restaurants.results[0]}
+                    items={data.search_restaurants.results}
+                  />
                 </Grid>
               </Grid>
             );
