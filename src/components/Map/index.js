@@ -1,6 +1,7 @@
 import React from 'react';
 import L from 'leaflet';
-import { Map as LeafMap, Marker, Popup, TileLayer } from 'react-leaflet';
+import { Map as LeafMap, Marker, Popup, TileLayer, withLeaflet } from 'react-leaflet';
+import { ReactLeafletSearch } from 'react-leaflet-search';
 import { Button } from '@material-ui/core';
 import { LocationOn } from '@material-ui/icons';
 import { withStyles } from '@material-ui/core/styles';
@@ -8,6 +9,8 @@ import { withStyles } from '@material-ui/core/styles';
 import CrosshairsGps from '../../assets/icons/CrosshairsGps.svg';
 import { getAvgPos, getCurrentPosition } from '../../utils/utils';
 import styles from './styles';
+
+const WrappedSearch = withLeaflet(ReactLeafletSearch);
 
 const PositionIcon = new L.Icon({
   iconUrl: CrosshairsGps,
@@ -19,7 +22,7 @@ const PositionIcon = new L.Icon({
   popupAnchor: [10, -1] // point from which the popup should open relative to the iconAnchor
 });
 
-class Map extends React.Component {
+class MapComponent extends React.Component {
   state = {
     currentPosition: null,
     zoom: 15,
@@ -56,6 +59,15 @@ class Map extends React.Component {
           >
             <LocationOn /> Use my location
           </Button>
+          <WrappedSearch
+            position="topright"
+            inputPlaceholder="Search food in your area ..."
+            zoom={13}
+            showMarker
+            showPopup
+            closeResultsOnClick
+            openSearchOnLoad
+          />
           {items.map((item) => (
             <Marker
               key={item.id}
@@ -75,4 +87,4 @@ class Map extends React.Component {
   }
 }
 
-export default withStyles(styles)(Map);
+export default withStyles(styles)(MapComponent);
