@@ -5,11 +5,28 @@ export default ({ palette, spacing }) => ({
     position: 'fixed',
     padding: '10px',
   },
+
   leaflet: {
     height: '100%',
     width: '100%',
     borderRadius: '10px',
   },
+
+  currentLocation: {
+    zIndex: 9999,
+    position: 'absolute',
+    top: 12,
+    left: 52,
+    backgroundColor: '#ffffff',
+    textTransform: 'inherit',
+    '&:hover': {
+      backgroundColor: '#f4f4f4',
+    },
+    '& > span > svg': {
+      color: palette.primary.main,
+      marginLeft: '-10px',
+    },
+  }
 
   // thumbnail: {
   //   width: '30%',

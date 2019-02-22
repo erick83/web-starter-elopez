@@ -1,4 +1,5 @@
 import moment from 'moment';
+import { getCenter } from 'geolib';
 
 export const shortenText = (text, maxVisible) => {
   if(text.length <= maxVisible) {
@@ -35,4 +36,25 @@ export const closeTimeParser = (hours) => {
   }
 
   return ret;
+};
+
+export const getAvgPos = (arr) => {
+  const result = getCenter(arr.map(({ lat, lon }) => ({ latitude: lat, longitude: lon })));
+  return [result.latitude, result.longitude];
+};
+
+export const getCurrentPosition = () => {
+  if ('geolocation' in navigator) {
+    return new Promise((resolve, reject) => {
+      navigator.geolocation.getCurrentPosition(
+        (success) => {
+          resolve([success.coords.latitude, success.coords.longitude]);
+        },
+        (error) => {
+          reject();
+        }
+      );
+    });
+  }
+  return null;
 };

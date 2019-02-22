@@ -75,18 +75,18 @@ export default createMuiTheme({
         },
       }
     },
-    MuiButton: {
-      contained: {
-        backgroundColor: palette.button.standard,
-        color: palette.text.primary
-      },
-      containedPrimary: {
-        backgroundColor: palette.primary.light,
-        '&:hover': {
-          backgroundColor: emphasize(palette.primary.light, 0.15),
-        },
-      }
-    },
+    // MuiButton: {
+    //   contained: {
+    //     backgroundColor: palette.button.standard,
+    //     color: palette.text.primary
+    //   },
+    //   containedPrimary: {
+    //     backgroundColor: palette.primary.light,
+    //     '&:hover': {
+    //       backgroundColor: emphasize(palette.primary.light, 0.15),
+    //     },
+    //   }
+    // },
     MuiIconButton: {
       colorPrimary: {
         color: palette.primary.light
