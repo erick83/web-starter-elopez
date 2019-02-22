@@ -1,19 +1,22 @@
 import React from 'react';
-import { Map as LeafMap, Marker, Popup, TileLayer } from 'react-leaflet';
+import { Map, Marker, Popup, TileLayer, withLeaflet } from 'react-leaflet';
+import { ReactLeafletSearch } from 'react-leaflet-search';
 import { getCenter } from 'geolib';
 import { withStyles } from '@material-ui/core/styles';
 
 import styles from './styles';
+
+const WrappedSearch = withLeaflet(ReactLeafletSearch);
 
 function parseCenter(arr) {
   const result = getCenter(arr.map(({ lat, lon }) => ({ latitude: lat, longitude: lon })));
   return [result.latitude, result.longitude];
 }
 
-function Map({ items, classes }) {
+function MapComponent({ items, classes }) {
   return (
     <div className={classes.wrapper}>
-      <LeafMap
+      <Map
         center={parseCenter(items)}
         zoom={13}
         className={classes.leaflet}
@@ -21,6 +24,15 @@ function Map({ items, classes }) {
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
+        />
+        <WrappedSearch
+          position="topright"
+          inputPlaceholder="Search food in your area ..."
+          zoom={13}
+          showMarker
+          showPopup
+          closeResultsOnClick
+          openSearchOnLoad
         />
         {items.map((item) => (
           <Marker
@@ -30,9 +42,9 @@ function Map({ items, classes }) {
             <Popup>{item.description}</Popup>
           </Marker>
         ))}
-      </LeafMap>
+      </Map>
     </div>
   );
 }
 
-export default withStyles(styles)(Map);
+export default withStyles(styles)(MapComponent);
